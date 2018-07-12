@@ -1,0 +1,38 @@
+[package]
+authors = ["bRad <brad@humanenginuity.com>"]
+name = "rsos"
+version = "0.1.0"
+
+#[dependencies.failure]
+#version = "*"
+#default-features = false
+#features = ["derive"]
+
+#[target.'cfg(test)'.dependencies.hesl]
+#git = "ssh://git@github.com/humanenginuity/hesl"
+
+[profile.dev]
+codegen-units = 1
+debug = true
+debug-assertions = true
+lto = false
+opt-level = 0
+rpath = false
+panic = "abort"
+
+[profile.release]
+codegen-units = 1
+debug = false
+debug-assertions = false
+lto = true
+opt-level = 3
+rpath = false
+panic = "abort"
+
+[profile.test]
+codegen-units = 1
+debug = 2
+debug-assertions = true
+lto = false
+opt-level = 0
+rpath = false
